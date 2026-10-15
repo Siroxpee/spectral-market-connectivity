@@ -121,7 +121,7 @@ W_{ij}=\max(C_{ij},0)\quad(i\ne j),\qquad W_{ii}=0,
 $$
 
 $$
-d_i=\sum_jW_{ij},\qquad D=\operatorname{diag}(d_1,\ldots,d_n),\qquad L=D-W.
+d_i=\sum_jW_{ij},\qquad D=\mathrm{diag}(d_1,\ldots,d_n),\qquad L=D-W.
 $$
 
 The weighted degree d is the total positive connection weight of a stock. Self-connections are removed. Negative correlations are discarded in this baseline; this does not mean they are absent or economically irrelevant. A separate negative or signed graph has **not** been implemented in this edition.
@@ -129,7 +129,7 @@ The weighted degree d is the total positive connection weight of a stock. Self-c
 L is symmetric and positive semidefinite because:
 
 $$
-x^\mathsf{T}Lx=\sum_{i<j}W_{ij}(x_i-x_j)^2\ge0.
+x^\mathsf{T}Lx=\sum_{i\lt j}W_{ij}(x_i-x_j)^2\ge0.
 $$
 
 Its eigenpairs satisfy Lv = λv. In increasing order:
@@ -151,8 +151,8 @@ It describes the least-cost continuous, zero-mean contrast across the weighted g
 Using unordered off-diagonal pairs, including zero weights:
 
 $$
-\bar\rho=\frac{2}{n(n-1)}\sum_{i<j}C_{ij},\qquad
-\bar w=\frac{2}{n(n-1)}\sum_{i<j}W_{ij}.
+\bar\rho=\frac{2}{n(n-1)}\sum_{i\lt j}C_{ij},\qquad
+\bar w=\frac{2}{n(n-1)}\sum_{i\lt j}W_{ij}.
 $$
 
 The first averages raw correlations, including negatives. The second averages the positive-clipped graph weights. They answer different questions.
@@ -299,8 +299,8 @@ The study establishes that this particular positive-correlation graph has measur
 Portfolio variance provides a concrete reason relationships can matter:
 
 $$
-\operatorname{Var}(R_p)=w^\mathsf{T}\Sigma w,\qquad
-\Sigma=\operatorname{diag}(\sigma)\,C\,\operatorname{diag}(\sigma).
+\mathrm{Var}(R_p)=w^\mathsf{T}\Sigma w,\qquad
+\Sigma=\mathrm{diag}(\sigma)\,C\,\mathrm{diag}(\sigma).
 $$
 
 Here w is the portfolio's allocation vector and σ contains individual return volatilities. Holding these quantities fixed, a change in C can change portfolio variance. However, clipping negative correlations and reducing a graph to one eigenvalue discards information. Raw λ₂ by itself does not specify w, σ, tail losses, liquidity or economic exposures. We have not tested whether it adds useful future-risk information beyond simple correlations and volatility.
