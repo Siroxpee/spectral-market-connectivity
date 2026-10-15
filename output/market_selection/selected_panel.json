@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "panel_id": "fixed12_diversified_etf_daily_v1",
+  "selection_frozen_at_utc": "2026-10-15T19:22:08.585053+00:00",
+  "selection_basis": "Economic exposure diversity, common historical coverage and first1000-session descriptive connection audit; no forecast target or model score used.",
+  "source_dataset_id": "yahoo_etf_daily_long",
+  "source_snapshot_path": "data/expanded/financial/snapshots/6803319d2d24e5a4ff01ecb483f1bd1872e0c69972cbbbfa1d5a69c47b75a7a5",
+  "snapshot_key": "6803319d2d24e5a4ff01ecb483f1bd1872e0c69972cbbbfa1d5a69c47b75a7a5",
+  "prices_sha256": "d279458ba10b2cb9e30986b073055c2d1912d85eda5e7b42aa9e1331153de235",
+  "manifest_sha256": "e73eb1eaf934e1285cb9ba8b647d13b92077f8ba080c0d396c51a205a43e1332",
+  "source_url": "https://finance.yahoo.com/",
+  "source": "Yahoo via yfinance",
+  "adjustment": "yfinance auto_adjust=True",
+  "feed": "Yahoo public interface",
+  "ordered_symbols": [
+    "XLB",
+    "XLE",
+    "XLF",
+    "XLI",
+    "XLK",
+    "XLP",
+    "XLU",
+    "XLV",
+    "XLY",
+    "GLD",
+    "TLT",
+    "DBC"
+  ],
+  "variables": [
+    {
+      "symbol": "XLB",
+      "source_variable": "XLB",
+      "variable_id": "etf12_daily::XLB",
+      "entity_id": "yahoo:ticker:XLB",
+      "exposure": "Materials",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "XLE",
+      "source_variable": "XLE",
+      "variable_id": "etf12_daily::XLE",
+      "entity_id": "yahoo:ticker:XLE",
+      "exposure": "Energy equities",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "XLF",
+      "source_variable": "XLF",
+      "variable_id": "etf12_daily::XLF",
+      "entity_id": "yahoo:ticker:XLF",
+      "exposure": "Financials",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "XLI",
+      "source_variable": "XLI",
+      "variable_id": "etf12_daily::XLI",
+      "entity_id": "yahoo:ticker:XLI",
+      "exposure": "Industrials",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "XLK",
+      "source_variable": "XLK",
+      "variable_id": "etf12_daily::XLK",
+      "entity_id": "yahoo:ticker:XLK",
+      "exposure": "Technology",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "XLP",
+      "source_variable": "XLP",
+      "variable_id": "etf12_daily::XLP",
+      "entity_id": "yahoo:ticker:XLP",
+      "exposure": "Consumer staples",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "XLU",
+      "source_variable": "XLU",
+      "variable_id": "etf12_daily::XLU",
+      "entity_id": "yahoo:ticker:XLU",
+      "exposure": "Utilities",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "XLV",
+      "source_variable": "XLV",
+      "variable_id": "etf12_daily::XLV",
+      "entity_id": "yahoo:ticker:XLV",
+      "exposure": "Health care",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "XLY",
+      "source_variable": "XLY",
+      "variable_id": "etf12_daily::XLY",
+      "entity_id": "yahoo:ticker:XLY",
+      "exposure": "Consumer discretionary",
+      "group": "equity_sector"
+    },
+    {
+      "symbol": "GLD",
+      "source_variable": "GLD",
+      "variable_id": "etf12_daily::GLD",
+      "entity_id": "yahoo:ticker:GLD",
+      "exposure": "Gold trust",
+      "group": "diversifier"
+    },
+    {
+      "symbol": "TLT",
+      "source_variable": "TLT",
+      "variable_id": "etf12_daily::TLT",
+      "entity_id": "yahoo:ticker:TLT",
+      "exposure": "Long-term US Treasury bonds",
+      "group": "diversifier"
+    },
+    {
+      "symbol": "DBC",
+      "source_variable": "DBC",
+      "variable_id": "etf12_daily::DBC",
+      "entity_id": "yahoo:ticker:DBC",
+      "exposure": "Diversified commodity futures fund",
+      "group": "diversifier"
+    }
+  ],
+  "interval": "1d",
+  "transform": "arithmetic_return",
+  "feature_units": "dimensionless fractional return",
+  "source_units": "USD/share; provider adjusted close levels",
+  "annualization": 252,
+  "bars_per_year": 252,
+  "price_rows": 5201,
+  "feature_rows": 5200,
+  "first_price_session": "2006-02-06T00:00:00",
+  "last_price_session": "2026-10-08T00:00:00",
+  "first_feature_session": "2006-02-07T00:00:00",
+  "last_feature_session": "2026-10-08T00:00:00",
+  "prices_missing_cells": 0,
+  "features_missing_cells": 0,
+  "feature_matrix_sha256": "27bc129e471cfa83dfc24361591752844d384dc008cf66a0a08f80c3fc4f83be",
+  "source_session_calendar_sha256": "50bc402dd4a10e91e18392071675133172a695b9a536cd4555b90be4b4a8f6b0",
+  "calendar": {
+    "type": "source_native_session_dates",
+    "support": "Full frozen ETF panel date grid, with SPY observed on every retained source row.",
+    "timestamp_policy": "Naive provider-local session DATE labels; not UTC instants or verified publication timestamps.",
+    "adjacent_rule": "Consecutive rows on this fixed source-session grid are adjacent sessions; Friday-Monday and holiday breaks are valid.",
+    "gap_policy": "Retain every source-calendar row after first common inception; a missing selected quote invalidates both adjacent returns. Never delete missing dates or fill values.",
+    "elapsed_seconds_mask": false,
+    "independent_exchange_calendar_verified": false,
+    "limitation": "An entirely absent source-wide trading session cannot be detected from this provider grid alone; no independent exchange-calendar library is installed."
+  },
+  "missing_policy": "No zero/forward/interpolating fill. Fixed cohort remains ordered; incomplete/nonconstant windows must be marked invalid, not shrink the universe.",
+  "allowed_windows": [
+    20,
+    40,
+    60,
+    120
+  ],
+  "allowed_histories": [
+    20,
+    60,
+    100
+  ],
+  "allowed_horizons": [
+    20,
+    60,
+    100
+  ],
+  "early_descriptive_selection_period": {
+    "start": "2006-02-07",
+    "end": "2010-01-27",
+    "returns": 1000,
+    "purpose": "Compare connection diversity only, not future targets, model selection or strategy returns."
+  },
+  "notes": [
+    "The cohort was chosen in2026 after seeing data availability and early descriptive relationships; it is not a historically preselected or point-in-time universe.",
+    "The source uses auto-adjusted prices frozen in2026, not a point-in-time corporate-action/publication database.",
+    "Sector holdings/classifications changed, notably real estate2016 and communication services2018; fund identity does not freeze economic composition.",
+    "GLD is a gold trust; TLT is long-duration Treasury exposure; DBC is a commodity futures fund including roll/collateral effects, not spot commodity prices.",
+    "Shared equity beta remains; diversified exposures do not guarantee negative correlations or a connected negative graph in every window.",
+    "Values end atOct8 2026 and are not live/current quotes. No newly unseen forecast holdout is implied.",
+    "Research choice, not an investment recommendation. Costs, executable prices, latency and practical profit have not been established."
+  ],
+  "raw_source_unchanged": true,
+  "downloads": 0,
+  "spend_usd": 0
+}

@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "validated_at_utc": "2026-10-15T22:43:01.851927+00:00",
+  "python": "3.13.6",
+  "platform": "Windows AMD64",
+  "core_packages": {
+    "numpy": "2.3.2",
+    "pandas": "2.3.1",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.2",
+    "python-dateutil": "2.9.0.post0",
+    "tzdata": "2025.2"
+  },
+  "dependency_policy": "Default requirements.txt selects exact tested direct core pins in requirements-validated.txt, using Python3.13.6. Not a complete transitive lockfile; broad numerical-version compatibility is not claimed.",
+  "commands": [
+    {
+      "command": "python synthetic_demo.py",
+      "status": "pass",
+      "network": false
+    },
+    {
+      "command": "python run_checks.py",
+      "status": "pass",
+      "network": false,
+      "child_commands": 7,
+      "checks": [
+        "graph identities and cleaning",
+        "exact numeric cache roundtrip/corruption",
+        "catalog integrity",
+        "expanded graph/topology invariants",
+        "synthetic signed graph/logit gradients",
+        "crypto trajectory synthetic chronology",
+        "ETF synthetic target/purge/bounds checks"
+      ]
+    }
+  ],
+  "fresh_environment_install": "PASS: independently installed pinned environment, Python3.13.6, user-site disabled; pip check, synthetic demo and all7 offline check commands passed.",
+  "independent_clean_environment": {
+    "status": "pass",
+    "python": "3.13.6",
+    "user_site_disabled": true,
+    "pip_check": "pass",
+    "synthetic_demo": "pass",
+    "run_checks_exit_code": 0,
+    "offline_commands_passed": 7,
+    "cache_check_groups_passed": 7,
+    "catalog_check_groups_passed": 3,
+    "raw_provider_downloads": 0,
+    "market_model_reruns": 0
+  },
+  "broader_dependency_failure": {
+    "status": "not supported",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "failing_command": "python crypto_trajectory.py --self-test",
+    "action": "Pinned default requirements to known-passing core versions; scientific source unchanged."
+  },
+  "cache_publication_portability": {
+    "scope": "Storage only; graph/model/protocol/raw-source definitions unchanged.",
+    "windows_retry_errors": [
+      5,
+      32,
+      33
+    ],
+    "maximum_attempts": 7,
+    "maximum_total_wait_seconds": 1.575,
+    "existing_destination_policy": "Refuse; never overwrite; recheck before every rename.",
+    "unrelated_error_policy": "Propagate",
+    "focused_pinned_checks": "7 cache groups and3 catalog groups passed independently."
+  },
+  "public_source_python_modules": 44,
+  "original_python_modules_byte_identical": 42,
+  "full_market_research_rerun": false,
+  "raw_provider_data_included": false,
+  "published_market_data_scope": "Ten derived ETF figures and250 aggregate model-comparison rows; no raw price/return feed.",
+  "synthetic_examples": {
+    "price_rows": 240,
+    "variables": 7,
+    "return_rows": 239,
+    "windows": 180,
+    "missing_price_example": true,
+    "constant_series_example": true,
+    "figures_visually_inspected": 2
+  },
+  "complete_aggregate_cases": 50,
+  "aggregate_model_rows": 250,
+  "byte_hashed_protocols_preserved": true,
+  "cross_platform_newline_policy": "All files -text to preserve exact release bytes.",
+  "excluded": [
+    "raw provider observations/responses",
+    "local catalogs and large archives",
+    "credentials and env files",
+    "private deployment identities/URLs",
+    "original notebook outputs and assistant instructions",
+    "resume/career/contact information",
+    "workstation-specific PDF rendering",
+    "node_modules"
+  ],
+  "claims": "Ongoing exploratory research. No dependable forecasting/trading/arbitrage advantage established.",
+  "spend_usd": 0,
+  "case_sensitive_relative_markdown_links_checked": 22
+}

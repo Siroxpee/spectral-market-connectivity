@@ -1,0 +1,35 @@
+{
+  "reviewed_at_utc": "2026-10-15T19:24:58.718090+00:00",
+  "sources": [
+    {
+      "title": "EIA wholesale daily price products and historical coverage",
+      "url": "https://www.eia.gov/electricity/wholesale/",
+      "use": "Product definitions and available historical bounds; actual usable windows verified from local frozen data."
+    },
+    {
+      "title": "State Street original sector funds prospectus",
+      "url": "https://www.sec.gov/Archives/edgar/data/1064641/000119312513026152/d459553d485bpos.htm",
+      "use": "Sector funds represent different groups of S&P500 companies; current sector definitions and holdings can change."
+    },
+    {
+      "title": "GLD official fund objective",
+      "url": "https://www.ssga.com/us/en/individual/etfs/spdr-gold-shares-gld",
+      "use": "Gold bullion less expenses, not gold mining equities."
+    },
+    {
+      "title": "TLT official fund objective",
+      "url": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
+      "use": "Long-duration US Treasury bond exposure."
+    },
+    {
+      "title": "DBC official fund objective",
+      "url": "https://www.invesco.com/us/en/financial-products/etfs/invesco-db-commodity-index-tracking-fund.html",
+      "use": "Diversified commodity futures fund; observed fund returns are not spot commodity returns."
+    },
+    {
+      "title": "NYSE hours and calendars",
+      "url": "https://www.nyse.com/trade/hours-calendars",
+      "use": "Daily exchange observations differ from continuous calendar days. The frozen provider grid was not independently reconciled to a full exchange calendar."
+    }
+  ]
+}

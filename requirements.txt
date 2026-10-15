@@ -1,0 +1,2 @@
+# Core offline demo and synthetic checks use the tested direct dependency pins.
+-r requirements-validated.txt
