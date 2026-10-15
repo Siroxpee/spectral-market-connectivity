@@ -141,7 +141,7 @@ $$
 The number of zero eigenvalues equals the number of connected components. The second eigenvalue λ₂ is algebraic connectivity. Its variational description is:
 
 $$
-\lambda_2=\min_{x\perp\mathbf{1},\;\|x\|_2=1}x^\mathsf{T}Lx.
+\lambda_2=\min_{x\perp\mathbf{1},\lVert x\rVert_2=1}x^\mathsf{T}Lx.
 $$
 
 It describes the least-cost continuous, zero-mean contrast across the weighted graph, which can concentrate on one weakly attached stock. Raw λ₂ changes with node count, edge scale and composition. It is dimensionless here, not a dollar loss, volatility, probability or automatic measure of market safety. The graph-theoretic background comes from [Fiedler's algebraic-connectivity paper](https://www.dml.cz/handle/10338.dmlcz/101168) and [Chung's spectral graph theory text](https://fanchung.ucsd.edu/research/outline.html).
@@ -300,7 +300,7 @@ Portfolio variance provides a concrete reason relationships can matter:
 
 $$
 \mathrm{Var}(R_p)=w^\mathsf{T}\Sigma w,\qquad
-\Sigma=\mathrm{diag}(\sigma)\,C\,\mathrm{diag}(\sigma).
+\Sigma=\mathrm{diag}(\sigma)\cdot C\cdot\mathrm{diag}(\sigma).
 $$
 
 Here w is the portfolio's allocation vector and σ contains individual return volatilities. Holding these quantities fixed, a change in C can change portfolio variance. However, clipping negative correlations and reducing a graph to one eigenvalue discards information. Raw λ₂ by itself does not specify w, σ, tail losses, liquidity or economic exposures. We have not tested whether it adds useful future-risk information beyond simple correlations and volatility.
