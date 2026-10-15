@@ -65,20 +65,27 @@ Why use this panel? It is the actual input behind the original calculation and s
 
 ## 3. The complete cleaning and calculation pathway
 
-```mermaid
-flowchart TD
-    A[Recovered daily stock Close matrix] --> B[Preserve source bytes and record fingerprint]
-    B --> C[Validate dates, columns and observed prices]
-    C --> D[Calculate arithmetic returns without filling gaps]
-    D --> E[Take trailing 60-return window; label by its last date]
-    E --> F[Replace infinities with missing values]
-    F --> G[Remove incomplete or nearly constant stock columns within this window]
-    G --> H[Estimate Pearson correlations on the same retained sample]
-    H --> I[Keep positive weights; set diagonal to zero]
-    I --> J[Build weighted degree matrix and Laplacian]
-    J --> K[Eigenvalues, Fiedler vector and interpretation diagnostics]
-    K --> L[Compare history, selected windows and exploratory controls]
-    L --> M[Document findings and limitations; future prediction unfinished]
+```text
+Stock-market study
+|-- 1. Preserve and understand the input
+|   |-- Recover the daily stock Close matrix
+|   |-- Keep source bytes and their fingerprint
+|   `-- Validate dates, columns and observed prices
+|-- 2. Prepare each historical sample
+|   |-- Calculate arithmetic returns without filling gaps
+|   |-- Take 60 returns ending on the displayed date
+|   `-- Remove incomplete or nearly constant stocks in that window
+|-- 3. Construct the relationship graph
+|   |-- Estimate Pearson correlations on one common sample
+|   |-- Keep positive weights and remove self-connections
+|   `-- Build the weighted degrees and Laplacian
+|-- 4. Measure and check its structure
+|   |-- Calculate eigenvalues and the separated Fiedler vector
+|   |-- Compare degrees, scale adjustments and localization
+|   `-- Examine selected windows and exploratory controls
+`-- 5. Interpret the evidence
+    |-- Report findings, data-quality concerns and limitations
+    `-- Future sector analysis and prediction: unfinished
 ```
 
 The diagram is a workflow, so its position has no numerical axis. All calculations and scientific figures use Python.
