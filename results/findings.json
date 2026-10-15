@@ -1,0 +1,448 @@
+{
+  "study": "Part I: descriptive stock co-movement",
+  "status": "working research; stock risk forecasting not validated",
+  "price_sha256": "8fc96b8b4b98d3e099a7506ab11b86b89aca042baa97ee2b37bfdf3cf38fde6b",
+  "window_size": 60,
+  "step_size": 1,
+  "evidence": {
+    "G01": {
+      "title": "Raw algebraic connectivity over time",
+      "stats": {
+        "windows": 2643,
+        "minimum": 1.2995489884538851,
+        "minimum_date": "2020-03-20",
+        "maximum": 110.65459709804975,
+        "maximum_date": "2022-10-21",
+        "median": 15.10110053533761
+      }
+    },
+    "G06": {
+      "title": "Minimum degree and Rayleigh-bound proximity",
+      "stats": {
+        "bound_fraction_median": 0.9972882885520103,
+        "bound_fraction_min": 0.5197874470306134,
+        "bound_fraction_max": 0.9997278656527245,
+        "windows_within_one_percent": 2232,
+        "fraction_within_one_percent": 0.8444948921679909,
+        "lambda2_min_degree_correlation": 0.9935479570216393
+      }
+    },
+    "G07": {
+      "title": "Fiedler localization and eigengap",
+      "stats": {
+        "numerically_separated_windows": 2643,
+        "ipr_median": 0.9919700712220241,
+        "ipr_min": 0.031320290980998394,
+        "ipr_max": 0.9958662600413878,
+        "ipr_above_09_count": 2254,
+        "ipr_above_09_fraction": 0.8528187665531592,
+        "eigengap_median": 4.131226553503893,
+        "eigengap_min": 0.01689163435225538,
+        "eigengap_max": 75.11987786794886
+      }
+    },
+    "G10": {
+      "title": "Both extrema are dominated by a weak singleton",
+      "stats": {
+        "2020-03-20": {
+          "weak_node": "FERG",
+          "min_degree": 1.2976136896860009,
+          "lambda2": 1.2995489884538851,
+          "singleton_rayleigh_bound": 1.3003058342704117,
+          "lambda2_fraction_of_bound": 0.999417947842285,
+          "weak_node_squared_mass": 0.9979122154742238,
+          "ipr": 0.9958287988917635,
+          "lambda3_gap": 3.145609628876438,
+          "fiedler_residual_norm": 2.0226340905716167e-13
+        },
+        "2022-10-21": {
+          "weak_node": "BMY",
+          "min_degree": 110.54438027551424,
+          "lambda2": 110.65459709804975,
+          "singleton_rayleigh_bound": 110.76906397526122,
+          "lambda2_fraction_of_bound": 0.9989666169135722,
+          "weak_node_squared_mass": 0.974431097499181,
+          "ipr": 0.9497117521656704,
+          "lambda3_gap": 1.5080071397145502,
+          "fiedler_residual_norm": 2.1437081982803643e-13
+        }
+      }
+    },
+    "G11": {
+      "title": "Node removal changes raw connectivity far more in percentage terms",
+      "stats": {
+        "2020-03-20": {
+          "removed_node": "FERG",
+          "original": {
+            "lambda2": 1.2995489884538851,
+            "lambda2_scale_ratio": 0.0041788757156595024,
+            "normalized_lambda2": 0.8440946616277246,
+            "fiedler_ipr": 0.9958287988917635
+          },
+          "sensitivity": {
+            "lambda2": 4.431439012373785,
+            "lambda2_scale_ratio": 0.014220574230017883,
+            "normalized_lambda2": 0.8441650176145713,
+            "fiedler_ipr": 0.9958153338514164
+          },
+          "relative_percent_changes": {
+            "lambda2": 240.99822721158125,
+            "lambda2_scale_ratio": 240.29665387580494,
+            "normalized_lambda2": 0.00833508254998172,
+            "fiedler_ipr": -0.0013521440996755452
+          },
+          "original_n": 483,
+          "sensitivity_n": 482
+        },
+        "2022-10-21": {
+          "removed_node": "BMY",
+          "original": {
+            "lambda2": 110.65459709804975,
+            "lambda2_scale_ratio": 0.43117174992054635,
+            "normalized_lambda2": 0.898972481434469,
+            "fiedler_ipr": 0.9497117521656704
+          },
+          "sensitivity": {
+            "lambda2": 112.04138128915596,
+            "lambda2_scale_ratio": 0.4364523040784975,
+            "normalized_lambda2": 0.8995045488927182,
+            "fiedler_ipr": 0.958550081045604
+          },
+          "relative_percent_changes": {
+            "lambda2": 1.2532549279244076,
+            "lambda2_scale_ratio": 1.224698547371017,
+            "normalized_lambda2": 0.05918617858027275,
+            "fiedler_ipr": 0.9306327798702219
+          },
+          "original_n": 493,
+          "sensitivity_n": 492
+        }
+      }
+    },
+    "G13": {
+      "title": "Synthetic controls separate uniform scaling from bottleneck structure",
+      "stats": {
+        "uniform": [
+          {
+            "uniform_edge_weight": 0.05,
+            "lambda2": 0.4,
+            "q": 0.9999999999999999
+          },
+          {
+            "uniform_edge_weight": 0.1,
+            "lambda2": 0.8,
+            "q": 0.9999999999999999
+          },
+          {
+            "uniform_edge_weight": 0.2,
+            "lambda2": 1.6,
+            "q": 0.9999999999999999
+          },
+          {
+            "uniform_edge_weight": 0.4,
+            "lambda2": 3.2,
+            "q": 0.9999999999999999
+          },
+          {
+            "uniform_edge_weight": 0.6,
+            "lambda2": 4.799999999999998,
+            "q": 0.9999999999999997
+          },
+          {
+            "uniform_edge_weight": 0.8,
+            "lambda2": 6.4,
+            "q": 0.9999999999999999
+          }
+        ],
+        "communities": [
+          {
+            "name": "A",
+            "within": 0.8,
+            "between": 0.1,
+            "mean_weight": 0.3333333333333333,
+            "lambda2": 0.3999999999999997,
+            "q": 0.29999999999999977
+          },
+          {
+            "name": "B",
+            "within": 0.4,
+            "between": 0.3,
+            "mean_weight": 0.3333333333333333,
+            "lambda2": 1.1999999999999995,
+            "q": 0.8999999999999997
+          }
+        ]
+      }
+    },
+    "G14": {
+      "title": "Independent finite samples already create positive graph edges",
+      "stats": {
+        "seed": 20261008,
+        "repetitions_per_dimension": 80,
+        "reference": {
+          "2020-03-20": {
+            "attempted_replicates": 80,
+            "successful_computations": 80,
+            "statuses": {
+              "ok": 80
+            },
+            "failed_replicates": [],
+            "fiedler_unseparated_or_unavailable": 0,
+            "metrics": {
+              "lambda2": {
+                "available_replicates": 80,
+                "unavailable_replicates": 0,
+                "median": 18.237143571953613,
+                "central_90_percent": [
+                  18.009706605919945,
+                  18.394378652386457
+                ],
+                "minimum": 17.898551883928338,
+                "maximum": 18.50380952424352,
+                "observed": 1.2995489884538851
+              },
+              "lambda2_scale_ratio": {
+                "available_replicates": 80,
+                "unavailable_replicates": 0,
+                "median": 0.7233862791470418,
+                "central_90_percent": [
+                  0.7138794502025293,
+                  0.7315812834979591
+                ],
+                "minimum": 0.7046779219071706,
+                "maximum": 0.7346773649634915,
+                "observed": 0.0041788757156595024
+              },
+              "normalized_lambda2": {
+                "available_replicates": 80,
+                "unavailable_replicates": 0,
+                "median": 0.7336579745361668,
+                "central_90_percent": [
+                  0.7270252777006083,
+                  0.7446941275750463
+                ],
+                "minimum": 0.7208477283785154,
+                "maximum": 0.7485397936306512,
+                "observed": 0.8440946616277246
+              },
+              "fiedler_ipr": {
+                "available_replicates": 80,
+                "unavailable_replicates": 0,
+                "median": 0.007990143626152503,
+                "central_90_percent": [
+                  0.006126868838443715,
+                  0.16681655134010273
+                ],
+                "minimum": 0.005354348294267832,
+                "maximum": 0.27435850761546143,
+                "observed": 0.9958287988917635
+              }
+            }
+          },
+          "2022-10-21": {
+            "attempted_replicates": 80,
+            "successful_computations": 80,
+            "statuses": {
+              "ok": 80
+            },
+            "failed_replicates": [],
+            "fiedler_unseparated_or_unavailable": 0,
+            "metrics": {
+              "lambda2": {
+                "available_replicates": 80,
+                "unavailable_replicates": 0,
+                "median": 18.645298944836103,
+                "central_90_percent": [
+                  18.364877514297863,
+                  18.837513247369778
+                ],
+                "minimum": 18.076433576841435,
+                "maximum": 18.890588786444216,
+                "observed": 110.65459709804975
+              },
+              "lambda2_scale_ratio": {
+                "available_replicates": 80,
+                "unavailable_replicates": 0,
+                "median": 0.7251638577925674,
+                "central_90_percent": [
+                  0.7141026254764072,
+                  0.7335020449639017
+                ],
+                "minimum": 0.6960344755004233,
+                "maximum": 0.74113004550592,
+                "observed": 0.43117174992054635
+              },
+              "normalized_lambda2": {
+                "available_replicates": 80,
+                "unavailable_replicates": 0,
+                "median": 0.735731450604719,
+                "central_90_percent": [
+                  0.7251082238993722,
+                  0.7432952286903739
+                ],
+                "minimum": 0.7180392133670247,
+                "maximum": 0.7465547463880454,
+                "observed": 0.898972481434469
+              },
+              "fiedler_ipr": {
+                "available_replicates": 80,
+                "unavailable_replicates": 0,
+                "median": 0.008017231988297246,
+                "central_90_percent": [
+                  0.006074897660898717,
+                  0.20019366171499758
+                ],
+                "minimum": 0.005486240972591028,
+                "maximum": 0.5314889002784697,
+                "observed": 0.9497117521656704
+              }
+            }
+          }
+        }
+      }
+    },
+    "G15": {
+      "title": "Selected-window structure varies under joint block resampling",
+      "stats": {
+        "seed": 20261008,
+        "repetitions_per_window": 120,
+        "block_length": 6,
+        "joint_row_resampling": true,
+        "fixed_asset_set": true,
+        "resampling": {
+          "2020-03-20": {
+            "attempted_replicates": 120,
+            "successful_computations": 120,
+            "statuses": {
+              "ok": 120
+            },
+            "failed_replicates": [],
+            "fiedler_unseparated_or_unavailable": 0,
+            "metrics": {
+              "lambda2": {
+                "available_replicates": 120,
+                "unavailable_replicates": 0,
+                "median": 1.6079285991510524,
+                "central_90_percent": [
+                  0.6908257568491681,
+                  15.127877863295529
+                ],
+                "minimum": 0.2031091690758617,
+                "maximum": 33.65356093121092,
+                "observed": 1.2995489884538851
+              },
+              "lambda2_scale_ratio": {
+                "available_replicates": 120,
+                "unavailable_replicates": 0,
+                "median": 0.004965099882896225,
+                "central_90_percent": [
+                  0.002177009723905967,
+                  0.07504854399417721
+                ],
+                "minimum": 0.0006205962561121573,
+                "maximum": 0.1525391401216209,
+                "observed": 0.0041788757156595024
+              },
+              "normalized_lambda2": {
+                "available_replicates": 120,
+                "unavailable_replicates": 0,
+                "median": 0.8282655634112228,
+                "central_90_percent": [
+                  0.6224236542868997,
+                  0.9271946407350173
+                ],
+                "minimum": 0.45111954477751404,
+                "maximum": 0.9478500149274177,
+                "observed": 0.8440946616277246
+              },
+              "fiedler_ipr": {
+                "available_replicates": 120,
+                "unavailable_replicates": 0,
+                "median": 0.995521011062211,
+                "central_90_percent": [
+                  0.9457176034946936,
+                  0.9958498853319266
+                ],
+                "minimum": 0.4799031768225326,
+                "maximum": 0.9958612816802513,
+                "observed": 0.9958287988917635
+              }
+            }
+          },
+          "2022-10-21": {
+            "attempted_replicates": 120,
+            "successful_computations": 120,
+            "statuses": {
+              "ok": 120
+            },
+            "failed_replicates": [],
+            "fiedler_unseparated_or_unavailable": 0,
+            "metrics": {
+              "lambda2": {
+                "available_replicates": 120,
+                "unavailable_replicates": 0,
+                "median": 73.29222156972114,
+                "central_90_percent": [
+                  37.84101380135362,
+                  102.14416847852841
+                ],
+                "minimum": 28.39094023286509,
+                "maximum": 121.72885746620943,
+                "observed": 110.65459709804975
+              },
+              "lambda2_scale_ratio": {
+                "available_replicates": 120,
+                "unavailable_replicates": 0,
+                "median": 0.27706279359002495,
+                "central_90_percent": [
+                  0.14558418948567864,
+                  0.37028996467377573
+                ],
+                "minimum": 0.11035876965774878,
+                "maximum": 0.40846130568440203,
+                "observed": 0.43117174992054635
+              },
+              "normalized_lambda2": {
+                "available_replicates": 120,
+                "unavailable_replicates": 0,
+                "median": 0.8797605186655876,
+                "central_90_percent": [
+                  0.8239177011532928,
+                  0.9130056762717276
+                ],
+                "minimum": 0.8025653983267568,
+                "maximum": 0.9261368840238119,
+                "observed": 0.898972481434469
+              },
+              "fiedler_ipr": {
+                "available_replicates": 120,
+                "unavailable_replicates": 0,
+                "median": 0.9903587522179766,
+                "central_90_percent": [
+                  0.8713830235264064,
+                  0.9954721497711764
+                ],
+                "minimum": 0.4048187087197205,
+                "maximum": 0.9958073205543678,
+                "observed": 0.9497117521656704
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "quality_flags": {
+    "missing_price_cells": 44491,
+    "absolute_return_flags_above_50_percent": 14,
+    "FERG_2020_03_20_zero_returns": 34,
+    "FERG_2020_03_20_window_returns": 60,
+    "cause": "unverified; no baseline observations altered"
+  },
+  "reproduction": {
+    "all_reference_dates_and_retained_counts_match": true,
+    "max_absolute_lambda2_difference": 1.9895196601282805e-13,
+    "max_absolute_mean_correlation_difference": 2.220446049250313e-16,
+    "description": "Prior full recomputation against saved original notebook references; this publication reuses its frozen derived metrics."
+  }
+}

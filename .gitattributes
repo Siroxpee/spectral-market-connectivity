@@ -1,3 +1,6 @@
-# Every release file has a worktree-byte hash. Preserve bytes across platforms.
-# This disables newline conversion without disabling ordinary text diffs.
-* -text
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+*.png binary

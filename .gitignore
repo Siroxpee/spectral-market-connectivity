@@ -4,13 +4,6 @@ __pycache__/
 venv/
 .env
 .env.*
-!.env.example
-data/
-crypto_mvp/local_data/
-*.sqlite
-*.sqlite-*
-*.zip
-*.log
-.DS_Store
-.idea/
-.vscode/
+local_data/
+run_output/
+.ruff_cache/

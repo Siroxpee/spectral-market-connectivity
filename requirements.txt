@@ -1,2 +1,6 @@
-# Core offline demo and synthetic checks use the tested direct dependency pins.
--r requirements-validated.txt
+numpy==2.3.2
+pandas==2.3.1
+scipy==1.17.1
+matplotlib==3.11.2
+python-dateutil==2.9.0.post0
+tzdata==2025.2

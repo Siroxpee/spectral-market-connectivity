@@ -1,8 +1,0 @@
-# Exact core environment used for the export quickstart, Python 3.13.6.
-# Other transitive dependencies resolve normally; this is not a full lockfile.
-numpy==2.3.2
-pandas==2.3.1
-scipy==1.17.1
-matplotlib==3.11.2
-python-dateutil==2.9.0.post0
-tzdata==2025.2

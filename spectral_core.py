@@ -1,4 +1,4 @@
-"""The original positive-correlation graph, with clearly labeled diagnostics.
+"""Standalone stock-return correlation graphs and descriptive diagnostics.
 
 No download, forecast, or trade is performed here. Every graph uses the same
 stocks and observations for all its measurements. The main entry points are
@@ -95,6 +95,13 @@ def analyze_correlation(
     ``lambda2_scale_ratio`` = lambda2 / (n * mean_positive_weight), or NaN
     when all weights are zero. It removes common edge scaling, but is not a
     universal risk measure or a guarantee of comparability across universes.
+    It is a scalar ratio, not an eigenvalue of the degree-normalized Laplacian.
+
+    ``weak_singleton_bound`` = n/(n-1) * min_degree is the Rayleigh upper
+    bound from separating one minimum-degree node from all other nodes.
+    ``lambda2_over_singleton_bound`` reports proximity to that constraint;
+    it is undefined when the bound is zero. Near equality does not identify
+    why that stock has weak measured correlations or prove an economic cause.
 
     This starter reports normalized lambda2 ONLY for connected graphs with
     strictly positive degrees. Other graphs get NaN, with components/status
@@ -155,6 +162,7 @@ def analyze_correlation(
         normalized_lambda2 = max(0.0, float(normalized_eigenvalues[1]))
 
     scale_ratio = lambda2 / (n * mean_positive_weight) if mean_positive_weight > 0 else np.nan
+    singleton_bound = n / (n - 1) * float(degrees.min())
     result = {
         "status": "ok" if connected else "disconnected",
         "num_stocks": n,
@@ -168,6 +176,8 @@ def analyze_correlation(
         "mean_degree": float(degrees.mean()),
         "min_degree": float(degrees.min()),
         "min_degree_ticker": str(degrees.idxmin()),
+        "weak_singleton_bound": float(singleton_bound),
+        "lambda2_over_singleton_bound": float(lambda2 / singleton_bound) if singleton_bound > 0 else np.nan,
         "lambda3_gap": lambda3_gap,
         "fiedler_separated": bool(fiedler_separated),
         "fiedler_ipr": fiedler_ipr,
@@ -203,6 +213,8 @@ def analyze_window(window: pd.DataFrame, *, include_fiedler: bool = False) -> di
             "mean_degree": np.nan,
             "min_degree": np.nan,
             "min_degree_ticker": None,
+            "weak_singleton_bound": np.nan,
+            "lambda2_over_singleton_bound": np.nan,
             "lambda3_gap": np.nan,
             "fiedler_separated": False,
             "fiedler_ipr": np.nan,
